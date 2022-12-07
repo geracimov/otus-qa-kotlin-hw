@@ -8,13 +8,13 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="/usr/local/Cellar/gradle/7.5.1/libexec" />
-        <option name="gradleJvm" value="14" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/hw1-testRunner" />
             <option value="$PROJECT_DIR$/hw2-kotestExtension" />
+            <option value="$PROJECT_DIR$/hw3-todo" />
+            <option value="$PROJECT_DIR$/ls04" />
           </set>
         </option>
       </GradleProjectSettings>
