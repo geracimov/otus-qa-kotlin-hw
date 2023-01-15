@@ -3,10 +3,11 @@ package ru.otus.service
 import ru.otus.data.Task
 import ru.otus.data.TasksRepositoryMemory
 import org.springframework.stereotype.Service
+import ru.otus.data.TasksRepository
 import ru.otus.http.error.*
 
 @Service
-class TaskService(private val taskRepo: TasksRepositoryMemory) {
+class TaskService(private val taskRepo: TasksRepository) {
 
     fun addTask(task: Task): Task {
         if (task.completed) {
