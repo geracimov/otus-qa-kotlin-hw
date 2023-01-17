@@ -7,28 +7,16 @@ import assertk.assertions.size
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.autoconfigure.web.WebProperties.Resources.Chain.Strategy.Content
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Import
 import org.springframework.http.MediaType
-import org.springframework.test.web.reactive.server.WebTestClient
 import org.springframework.test.web.servlet.*
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import ru.otus.data.Priority
 import ru.otus.data.Task
-import ru.otus.data.TasksRepository
 import ru.otus.data.TasksRepositoryMemory
 import ru.otus.service.TaskService
-import java.nio.charset.Charset
 import java.util.stream.Stream
 
 @WebMvcTest
