@@ -47,12 +47,7 @@ class TaskControllerTest {
 
     @BeforeEach
     fun setUp() {
-        Stream.of(service.getTasks(false),
-                service.getTasks(true))
-                .flatMap { it.stream() }
-                .map { it.id }
-                .distinct()
-                .forEach { service.deleteTask(it as Int) }
+        Stream.of(service.getTasks(false), service.getTasks(true)).flatMap { it.stream() }.map { it.id }.distinct().forEach { service.deleteTask(it as Int) }
         service.addTask(Task(3, "Task3", Priority.HIGH, false))
         service.addTask(Task(1, "Task1", Priority.LOW, false))
         service.addTask(Task(2, "Task2", Priority.MEDIUM, false))
@@ -80,6 +75,7 @@ class TaskControllerTest {
             status { isBadRequest() }
         }
     }
+
     @Test
     fun deleteCompletedTask() {
         service.completeTask(2)
@@ -89,6 +85,7 @@ class TaskControllerTest {
             status { isInternalServerError() }
         }
     }
+
     @Test
     fun deleteTask() {
         mvc.delete("/api/v1/tasks/1") {
