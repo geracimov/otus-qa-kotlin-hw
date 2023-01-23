@@ -2,6 +2,8 @@ plugins {
     kotlin("jvm") version "1.7.20"
     application
     id("org.springframework.boot") version "2.7.6"
+    jacoco
+    id("io.qameta.allure") version "2.11.2"
 }
 
 group = "ru.geracimov.otus.kotlinqa.hw"
@@ -25,6 +27,7 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+    finalizedBy("jacocoTestReport", "allureReport")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
